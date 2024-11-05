@@ -10,7 +10,7 @@ const ArgumentScreen = () => {
   const [topic, setTopic] = useState('');
   const [response, setResponse] = useState('');
   const [loading, setLoading] = useState(false);
-  const { width } = useWindowDimensions();
+  const { width, height } = useWindowDimensions();
   const router = useRouter();
   const navigation = useNavigation();
 
@@ -33,12 +33,12 @@ const ArgumentScreen = () => {
 
   return (
     <ContainerBody>
-      <View style={[styles.container, { width: width > 768 ? '50%' : '40%', alignSelf: 'center'}]}>
-        <Text style={[styles.label, { fontSize: width > 768 ? 24 : 18,  }]}>
+      <View style={[styles.container, { width: width > 768 ? '50%' : '90%', alignSelf: 'center'}]}>
+        <Text style={[styles.label, { fontSize: width > 768 ? 24 : 18 }]}>
           Insira o tema da redação:
         </Text>
         <TextInput
-          style={[styles.input, { width: width > 768 ? '80%' : '100%',}]}
+          style={[styles.input, { width: '100%' }]}
           placeholder="Digite o tema aqui..."
           value={topic}
           onChangeText={setTopic}
@@ -57,11 +57,11 @@ const ArgumentScreen = () => {
       </View>
 
       <Footer>
-                <ButtonContainer href='/newRedacao'>
-                    <Icone source={require('../../assets/mais.png')} /> 
+                <ButtonContainer href='/(groups)'>
+                    <Icone source={require('../../assets/botao-de-inicio.png')} />
                 </ButtonContainer>
                 <ButtonContainer href='/sinonimos'>
-                    <Icone source={require('../../assets/editor-de-texto.png')} /> 
+                    <Icone source={require('../../assets/editor-de-texto.png')} />
                 </ButtonContainer>
                 <ButtonContainer href='/ia'>
                     <Icone source={require('../../assets/ai.png')} /> 
@@ -81,8 +81,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     marginBottom: 10,
     color: '#333',
-    justifyContent: 'center',
-    alignItems: 'center',
+    textAlign: 'center',
   },
   input: {
     height: 50,
@@ -93,15 +92,15 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     fontSize: 18,
     marginBottom: 20,
-    marginLeft: 50,
+
   },
   customButton: {
     backgroundColor: '#18206f',
-    padding: 15,
+    paddingVertical: 15,
+    paddingHorizontal: 30,
     borderRadius: 5,
     alignItems: 'center',
     marginBottom: 10,
-    marginLeft: 40,
   },
   buttonText: {
     color: '#fff',
@@ -168,17 +167,6 @@ const Icone = styled.Image`
     max-height: 30px;
     width: 100%;
     height: 100%;
-`;
-
-
-const ButtonContainer1 = styled.TouchableOpacity`
-  height: 60px;
-  width: 60px;
-  align-items: center;
-  border-radius: 8px;
-  justify-content: center;
-  margin-top: 20px;
-  padding: 10px;
 `;
 
 export default ArgumentScreen;
