@@ -93,13 +93,14 @@ const ContainerBody = styled.View`
 const Container = styled.View`
     padding: 10px;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 90px;
 `;
 
 const Div = styled.View`
     padding: 20px;
     align-items: center;
     width: 100%;
+    margin-top: -20px;
 `;
 
 const Title = styled.Text`
@@ -156,7 +157,7 @@ const ButtonNovo = styled(ExpoRouterLink)`
     width: 80%;
     border-radius: 8px;
     background-color: #18206f;
-    padding-top: 17px;
+    padding-top: 14px;
     text-align: center;
 `;
 
